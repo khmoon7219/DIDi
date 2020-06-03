@@ -6,25 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/custom_button"
-        android:layout_width="150dp"
-        android:layout_height="72dp"
-        android:text="press me"
-        android:background="@drawable/custom_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:textSize="20sp" />
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="310dp" />
 
-    <Switch
-        android:id="@+id/switch_enable_button"
-        android:layout_width="109dp"
-        android:layout_height="46dp"
-        android:text="Enabled"
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_jiu_emblem" />
+
+    <TextView
+        android:id="@+id/httpText"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="https://"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/urlText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/videoView"
+        />
+
+    <EditText
+        android:id="@+id/urlText"
+        android:layout_width="550dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textUri"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/httpText"
+        app:layout_constraintTop_toBottomOf="@id/videoView"
+        />
+
+    <Button
+        android:id="@+id/urlBtn"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="검색"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/urlText"
+        app:layout_constraintLeft_toRightOf="@id/urlText"
+        app:layout_constraintTop_toBottomOf="@id/videoView"
+        />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@color/colorPrimary"
+        android:numColumns="4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/custom_button" />
+        app:layout_constraintTop_toBottomOf="@id/urlText" >
+
+    </GridView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@color/colorAccent"
+        android:src="@drawable/ic_jiumark"
+        app:layout_constraintTop_toBottomOf="@id/gridView"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
